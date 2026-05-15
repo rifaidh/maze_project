@@ -7,16 +7,16 @@ def generate_maze_grid(rows, cols, start_pos, end_pos):
 
     while stack:
         r, c = stack[-1]
-        tetangga_valid = []
-        arah = [(-2, 0), (2, 0), (0, -2), (0, 2)]
+        valid_neighbors = []
+        direction = [(-2, 0), (2, 0), (0, -2), (0, 2)]
         
-        for dr, dc in arah:
+        for dr, dc in direction:
             nr, nc = r + dr, c + dc
             if 0 < nr < rows-1 and 0 < nc < cols-1 and grid[nr][nc] == 1:
-                tetangga_valid.append((nr, nc, dr, dc))
+                valid_neighbors.append((nr, nc, dr, dc))
 
-        if tetangga_valid:
-            nr, nc, dr, dc = random.choice(tetangga_valid)
+        if valid_neighbors:
+            nr, nc, dr, dc = random.choice(valid_neighbors)
             grid[r + dr//2][c + dc//2] = 0
             grid[nr][nc] = 0
             stack.append((nr, nc))
