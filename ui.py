@@ -45,14 +45,14 @@ class MazeUI:
 
     def setup_ui(self):
         self.root.configure(bg=self.bg_color)
-        self.root.title("🌿 MAZE EXPLORER")
+        self.root.title("MAZE GAME")
 
         # Header
         header = tk.Frame(self.root, bg=self.bg_color)
         header.pack(fill="x", padx=0, pady=0)
 
         title_lbl = tk.Label(
-            header, text="✦  MAZE EXPLORER  ✦",
+            header, text="✦  MAZE GAME  ✦",
             font=("Courier New", 15, "bold"),
             bg=self.bg_color, fg=self.accent_gold
         )
