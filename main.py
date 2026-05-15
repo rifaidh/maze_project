@@ -47,6 +47,13 @@ class AppController:
         else:
             self.ui.show_error_message()
 
+    def handle_keypress(self, event):
+            old_pos, new_pos = self.state.move_player(event.keysym)
+            if old_pos and new_pos:
+                self.ui.update_player_move(old_pos, new_pos)
+                if self.state.check_win():
+                    self.ui.show_win_message()
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = AppController(root)
