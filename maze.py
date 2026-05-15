@@ -12,7 +12,7 @@ def generate_maze_grid(rows, cols, start_pos, end_pos):
         
         for dr, dc in directions:
             nr, nc = r + dr, c + dc
-            if 0 < nr < rows-1 and 0 < nc < cols-1 and grid[nr][nc] == 1:
+            if 0 < nr < rows - 1 and 0 < nc < cols - 1 and grid[nr][nc] == 1:
                 valid_neighbors.append((nr, nc, dr, dc))
 
         if valid_neighbors:
