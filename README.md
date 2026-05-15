@@ -4,7 +4,7 @@ maze_project/
 │
 ├── main.py                # Entry program
 ├── maze.py                # Generator maze
-├── solver.py              # BFS algorithm to find the shortest path
+├── algorithm.py           # BFS algorithm to find the shortest path
 ├── engine.py              # Game state (init, reset, win) and movement
 └── ui.py                  # user interface, animation
 ```
