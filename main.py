@@ -28,6 +28,24 @@ class AppController:
             self.state.reset_state(new_grid)
             self.ui.update_status("MANUAL PLAY: USE ARROW KEYS", self.ui.player_color)
             self.ui.draw_grid()
+        
+    def handle_solve(self):
+        if not self.state.is_playing and tuple(self.state.player_pos) == self.state.end_pos:
+            return
+            
+        self.state.is_playing = False
+        self.ui.update_status("Finding path...", self.ui.path_color)
+        
+        pr, pc = self.state.player_pos
+        self.ui.canvas.itemconfig(self.ui.rectangles[(pr, pc)], fill=self.ui.get_cell_color(pr, pc))
+        self.ui.draw_grid()
+        
+        path, exploration = algorithm.bfs_shortest_path(self.state.grid, self.state.start_pos, self.state.end_pos)
+        
+        if path:
+            self.ui.animate_exploration(exploration, path, 0)
+        else:
+            self.ui.show_error_message()
 
 if __name__ == "__main__":
     root = tk.Tk()
