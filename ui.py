@@ -8,8 +8,7 @@ class MazeUI:
         self.state = state
         self.callbacks = callbacks
 
-        # ── New color theme: "Bioluminescent Jungle" ────────────────────────
-        # Dark green background like a night forest
+        # Dark green background
         self.bg_color        = "#0A1628"  
         self.panel_color     = "#0F2040"   
 
