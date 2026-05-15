@@ -23,15 +23,15 @@ class MazeUI:
         self.path_color      = "#FFD166"  
         self.path_glow       = "#FF9E2C"   
 
-        # Titik penting
+        # Important Point
         self.start_color     = "#06FFB4"   
         self.end_color       = "#FF4D8F"   
 
-        # Pemain
+        # Player
         self.player_color    = "#A259FF"   
         self.player_trail    = "#6B2FCC"   
 
-        # Teks & UI
+        # Text & UI
         self.text_bright     = "#E8F4FD"  
         self.text_muted      = "#7BA3C4"  
         self.accent_gold     = "#FFD166"   
@@ -179,7 +179,7 @@ class MazeUI:
     def show_error_message(self):
         messagebox.showinfo("Error", "No valid path could be found!")
 
-    # AI Exploration Animation
+    # Exploration Animation
     def animate_exploration(self, exploration, path, index):
         if index < len(exploration):
             r, c = exploration[index]
