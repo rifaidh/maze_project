@@ -25,7 +25,7 @@ class GameState:
             dr, dc = move[event_keysym]
             nr, nc = r + dr, c + dc
             
-            if 0 <= nr < self.rows and 0 <= nc < self.cols and self.grid[nr][nc] == 1:
+            if 0 <= nr < self.rows and 0 <= nc < self.cols and self.grid[nr][nc] == 0:
                 old_pos = (r, c)
                 self.player_pos = [nr, nc]
                 return old_pos, (nr, nc)
